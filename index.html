@@ -2,61 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="styles.css">
+
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
+  <script src="script.js"></script>
 </head>
 <body>
-
-  hello
-  Mortgage Calculator
-  Clear All
-
-  Mortgage Amount
-
-  Mortgage Term
-
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="whole-container">
+    <div class="inputs-container">
+      <h1>Mortgage Calculator</h1>
+      <small>Clear All</small>
+    
+      <div class="mortgage-amount">
+        <p>Mortgage Amount</p>
+        <input type="text">
+      </div>
+    
+      <div class="mortgage-term">
+        <p>Mortgage Term</p>
+        <input type="text">
+      </div>
+        
+      <div class="interest-rate">
+        <p>Interest Rate</p>
+        <input type="text">
+      </div>
+      <div>
+        <p>Mortgage Type</p>
+        <button>Interest Only</button>    
+        <button>Calculate Repayments</button> <!--you still need to do something about this section-->
+      </div>
+    </div>
+    <!-- Empty results start -->
+    <div class="results-container">
+      <div class="empty-results">
+        <h1>Results shown here</h1>
+        <p>
+          Complete the form and click “calculate repayments” to see what 
+          your monthly repayments would be.
+        </p>
+      </div>
+    
+      <!-- Empty results end -->
+    
+      <!-- Completed results start -->
+      <div class="completed-results">
+        <h1>Your results</h1>
+        <p>
+          Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.
+        </p>    
+        <div>
+          <h3>Your monthly repayments</h3>
+          <p class="monthly-payments"></p>
+        </div>
+        <div>
+          <h3>Total you'll repay over the term</h3>
+          <p class="repay-amount"></p>
+        </div>
+      </div>    
+    </div> 
   </div>
 </body>
 </html>
