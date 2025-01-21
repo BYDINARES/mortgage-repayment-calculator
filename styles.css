@@ -1,3 +1,32 @@
 html {
     height: 900px;
 }
+/*grid container*/
+.whole-container {
+    display: grid;
+    height: 900px;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 3fr 1fr;
+}
+/*grid elements*/
+.inputs-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+}
+/*a flex item (top)*/
+.mortgage-type{
+    display: flex;
+    flex-direction: column;
+}
+/*The top iputs*/
+
+.inputs-container input{
+    width: 99%;
+}
+
+.results-container{
+    grid-column: 2/3;
+    grid-row: 2;
+}
+
