@@ -19,7 +19,7 @@
   <div class="whole-container">
     <div class="inputs-container">
       <h1>Mortgage Calculator</h1>
-      <small>Clear All</small>
+      <p>Clear All</p>
     
       <div class="top-inptus mortgage-amount">
         <p>Mortgage Amount</p>
@@ -37,8 +37,16 @@
       </div>
       <div class="mortgage-type">
         <p>Mortgage Type</p>
-        <button>Interest Only</button>    
-        <button>Calculate Repayments</button> <!--you still need to do something about this section-->
+        
+        <!--The two options-->
+        <input type="radio">
+        <label for="Repayment">Repayment</label>
+        
+        <input type="radio">
+        <label for="Interest Only">Interest Only</label>
+        
+        <!--Solution button-->
+        <button>Calculate Repayments</button>
       </div>
     </div>
     <!-- Empty results start -->
