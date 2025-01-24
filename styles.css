@@ -1,5 +1,6 @@
 html {
-    height: 900px;
+    height: 1200px;
+    width: 100%;
 }
 /*grid container*/
 .whole-container {
@@ -7,6 +8,7 @@ html {
     height: 900px;
     grid-template-columns: 5% 1fr 5%;
     grid-template-rows: 3fr 1fr;
+    width: 100%;
 }
 /*grid elements*/
 .inputs-container {
@@ -35,3 +37,18 @@ html {
     grid-row: 2;
 }
 
+/*Bottom inputs*/
+.two-options-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.mortgage-type label{
+    display: flex;
+    cursor: pointer;
+    flex-grow: 1;
+    gap: 0%;
+}
+input[type="radio"] {
+    margin: 0;
+  }

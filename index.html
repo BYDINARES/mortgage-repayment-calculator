@@ -39,11 +39,17 @@
         <p>Mortgage Type</p>
         
         <!--The two options-->
-        <input type="radio">
-        <label for="Repayment">Repayment</label>
-        
-        <input type="radio">
-        <label for="Interest Only">Interest Only</label>
+        <div class="two-options-inputs">
+          <label>
+            <input type="radio" name="mortgageType">
+            <p>Repayment</p>
+          </label>
+  
+          <label>
+            <input type="radio" name="mortgageType">
+            <p>Interest Only</p>
+          </label>
+        </div>
         
         <!--Solution button-->
         <button>Calculate Repayments</button>
