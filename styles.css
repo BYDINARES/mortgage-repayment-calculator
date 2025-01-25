@@ -17,11 +17,7 @@ html {
     width: 100%;
     height: 100%;
 }
-/*a flex item (top)*/
-.mortgage-type{
-    display: flex;
-    flex-direction: column;
-}
+
 /*The top iputs*/
 
 .inputs-container input{
@@ -37,18 +33,36 @@ html {
     grid-row: 2;
 }
 
-/*Bottom inputs*/
+
+
+/* Bottom inputs 
+   Bottom part of the top
+*/
+.mortgage-type{
+    display: flex;
+    flex-direction: column;
+}
+
 .two-options-inputs{
     display: flex;
     flex-direction: column;
 }
 
-.mortgage-type label{
+.two-options-inputs input{
+    width: fit-content;
+    width: 25px; /* Set the desired width */
+    height: 25px; /* Set the desired height */
+    margin: 0;
+}
+
+
+.two-options-inputs label{
     display: flex;
     cursor: pointer;
     flex-grow: 1;
-    gap: 0%;
+    gap: 1px;
 }
-input[type="radio"] {
+
+.two-options-inputs p {
     margin: 0;
-  }
+}
