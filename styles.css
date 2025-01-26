@@ -1,13 +1,15 @@
-html {
+html, body {
     height: 1200px;
     width: 100%;
+    padding: 0%;
+    margin: 0%;
 }
 /*grid container*/
 .whole-container {
     display: grid;
     height: 900px;
-    grid-template-columns: 5% 1fr 5%;
-    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 60% 40%;
     width: 100%;
 }
 /*grid elements*/
@@ -21,16 +23,12 @@ html {
 /*The top iputs*/
 
 .inputs-container input{
+    height: 100%;
     width: 99%;
-    font-size: 3rem;
+    font-size: 2rem;
     border-color: rgb(7, 161, 7);
     border-width: 1.5px;
     border-radius: 4px;
-}
-
-.results-container{
-    grid-column: 2/3;
-    grid-row: 2;
 }
 
 
@@ -46,12 +44,12 @@ html {
 .two-options-inputs{
     display: flex;
     flex-direction: column;
+    gap: 10%;
 }
 
 .two-options-inputs input{
-    width: fit-content;
-    width: 25px; /* Set the desired width */
-    height: 25px; /* Set the desired height */
+    width: 20%; /* Set the desired width */
+    height: 20%; /* Set the desired height */
     margin: 0;
 }
 
@@ -60,9 +58,22 @@ html {
     display: flex;
     cursor: pointer;
     flex-grow: 1;
-    gap: 1px;
+    gap: 30%;
+    padding: 2%;
+    padding-left: 3%;
+    /*border*/
+    border: 1.5px solid rgb(7, 161, 7);
+    border-radius: 4px;
+    /*Font-size*/
+    font-size: 1.2rem;
 }
 
 .two-options-inputs p {
     margin: 0;
+}
+
+/*Bottom*/
+.results-container{
+    grid-column: 2/3;
+    grid-row: 2;
 }
