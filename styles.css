@@ -3,6 +3,9 @@ html, body {
     width: 100%;
     padding: 0%;
     margin: 0%;
+    font-family: 'Plus Jakarta Sans';
+    font-style: italic;
+
 }
 /*grid container*/
 .whole-container {
@@ -20,8 +23,13 @@ html, body {
     height: 100%;
 }
 
-/*The top iputs*/
+.inputs-container p {
+    font-size: 1rem;
+    margin: 0%;
+}
 
+
+/*The top iputs*/
 .inputs-container input{
     height: 100%;
     width: 99%;
@@ -31,7 +39,9 @@ html, body {
     border-radius: 4px;
 }
 
-
+.top-inputs{
+    padding-top: 5%;
+}
 
 /* Bottom inputs 
    Bottom part of the top
@@ -39,6 +49,7 @@ html, body {
 .mortgage-type{
     display: flex;
     flex-direction: column;
+    padding-top: 2%;
 }
 
 .two-options-inputs{
@@ -46,7 +57,7 @@ html, body {
     flex-direction: column;
     gap: 10%;
 }
-
+/*LOOK HERE*/
 .two-options-inputs input{
     width: 20%; /* Set the desired width */
     height: 20%; /* Set the desired height */

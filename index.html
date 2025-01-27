@@ -9,6 +9,24 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('woff2'),
+      url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('woff'),
+      url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('truetype');
+      font-style: italic;
+      font-weight: 100 900;
+    }
+
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('woff2'),
+      url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('woff'), 
+      url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('truetype');
+      font-style: normal;
+      font-weight: 100 900;
+    }
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
@@ -21,17 +39,17 @@
       <h1>Mortgage Calculator</h1>
       <p>Clear All</p>
     
-      <div class="top-inptus mortgage-amount">
+      <div class="top-inputs mortgage-amount">
         <p>Mortgage Amount</p>
         <input type="text">
       </div>
     
-      <div class="top-inptus mortgage-term">
+      <div class="top-inputs mortgage-term">
         <p>Mortgage Term</p>
         <input type="text">
       </div>
         
-      <div class="top-inptus interest-rate">
+      <div class="top-inputs interest-rate">
         <p>Interest Rate</p>
         <input type="text">
       </div>
