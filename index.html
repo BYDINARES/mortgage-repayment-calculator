@@ -26,9 +26,6 @@
       font-style: normal;
       font-weight: 100 900;
     }
-
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 
   <script src="script.js"></script>
@@ -37,11 +34,14 @@
   <div class="whole-container">
     <div class="inputs-container">
       <h1>Mortgage Calculator</h1>
-      <p>Clear All</p>
+      <p class="clear-all">Clear All</p>
     
-      <div class="top-inputs mortgage-amount">
+      <div class="top-inputs" id="mortgage-amount">
         <p>Mortgage Amount</p>
-        <input type="text">
+        <div>
+          <div class="side-symbol pound">£</div>
+          <input type="text">
+        </div>
       </div>
     
       <div class="top-inputs mortgage-term">

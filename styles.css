@@ -1,11 +1,10 @@
 html, body {
-    height: 1200px;
+    height: 120vh;
     width: 100%;
     padding: 0%;
     margin: 0%;
     font-family: 'Plus Jakarta Sans';
     font-style: italic;
-
 }
 /*grid container*/
 .whole-container {
@@ -15,7 +14,7 @@ html, body {
     grid-template-rows: 60% 40%;
     width: 100%;
 }
-/*grid elements*/
+/*grid elements top*/
 .inputs-container {
     grid-column: 2/3;
     grid-row: 1/2;
@@ -26,26 +25,54 @@ html, body {
 .inputs-container p {
     font-size: 1rem;
     margin: 0%;
+    margin-bottom: 2%;
 }
 
+.inputs-container h1{
+    margin-bottom: 0%;
+}
 
-/*The top iputs*/
+.top-inputs div{
+    display: flex;
+
+}
+
+    /*General top-inputs on the top*/
 .inputs-container input{
     height: 100%;
     width: 99%;
     font-size: 2rem;
-    border-color: rgb(7, 161, 7);
-    border-width: 1.5px;
+    border-color: gray;
+    border-width: 1.8px;
     border-radius: 4px;
 }
-
 .top-inputs{
     padding-top: 5%;
 }
 
-/* Bottom inputs 
-   Bottom part of the top
-*/
+    /*Specific inputs on the top*/
+    /*1*/
+#mortgage-amount input{
+    width: 80%;
+    border-left-color: transparent;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+
+.pound{
+    width: 20%;
+    background-color: rgb(114, 214, 181);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-left: 1.5px solid gray;
+    border-top: 1.5px solid gray;
+    border-bottom: 1.8px solid gray;
+}
+
+/* Bottom of the top*/
 .mortgage-type{
     display: flex;
     flex-direction: column;
@@ -81,6 +108,10 @@ html, body {
 
 .two-options-inputs p {
     margin: 0;
+}
+
+.mortgage-type button{
+    margin-top: 4%;
 }
 
 /*Bottom*/
