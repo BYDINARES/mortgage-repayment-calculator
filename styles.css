@@ -32,44 +32,78 @@ html, body {
     margin-bottom: 0%;
 }
 
-.top-inputs div{
-    display: flex;
-
-}
-
     /*General top-inputs on the top*/
-.inputs-container input{
+.inputs-container input /*All the inputs*/{
     height: 100%;
     width: 99%;
     font-size: 2rem;
-    border-color: gray;
-    border-width: 1.8px;
-    border-radius: 4px;
+    border-top: 1.8px solid gray;
+    border-bottom: 1.8px solid gray;
 }
-.top-inputs{
+.top-inputs /*The container that holds the inputs and everthing else*/{
     padding-top: 5%;
+}
+
+.top-inputs div{
+    display: flex;
+}
+
+.side-symbol /*All the boxes on the sides of the inputs*/ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(203, 233, 237);
+    border-top: 1.5px solid gray;
+    border-bottom: 1.8px solid gray;
 }
 
     /*Specific inputs on the top*/
     /*1*/
-#mortgage-amount input{
+.mortgage-amount input /*The first input*/{
     width: 80%;
-    border-left-color: transparent;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right: 1.8px solid gray;
+    border-left-color: transparent;
 }
 
-.pound{
+.pound /*The box in the first input*/{
     width: 20%;
-    background-color: rgb(114, 214, 181);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     border-left: 1.5px solid gray;
-    border-top: 1.5px solid gray;
-    border-bottom: 1.8px solid gray;
+}
+
+    /*2-3*/
+.mortgage-term input, .interest-rate input /*The second input and teh third*/{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.years, .percentage{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right: 1.8px solid gray;
+}
+
+    /*2*/
+.mortgage-term input{
+    width: 75%;
+}
+
+.years{
+    width: 25%;
+}
+
+    /*3*/
+.interest-rate input{
+    width: 80%;
+}
+
+.percentage{
+    width: 20%;
 }
 
 /* Bottom of the top*/
