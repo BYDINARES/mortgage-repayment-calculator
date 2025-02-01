@@ -1,5 +1,5 @@
 html, body {
-    height: 120vh;
+    height: 150vh;
     width: 100%;
     padding: 0%;
     margin: 0%;
@@ -9,7 +9,7 @@ html, body {
 /*grid container*/
 .whole-container {
     display: grid;
-    height: 105vh;
+    height: 150vh;
     grid-template-columns: 5% 90% 5%;
     grid-template-rows: 60% 40%;
     width: 100%;
@@ -43,6 +43,7 @@ html, body {
 }
 .top-inputs /*The container that holds the inputs and everthing else*/{
     padding-top: 5%;
+    height: 13%;
 }
 .top-inputs div{
     display: flex;
@@ -54,6 +55,11 @@ html, body {
     background-color: rgb(203, 233, 237);
     border-top: 1.5px solid gray;
     border-bottom: 1.8px solid gray;
+}
+
+    /*The font size of all the document elements*/
+.top-inputs p{
+    font-size: 1.5rem;
 }
 
     /*Specific inputs on the top*/
@@ -110,47 +116,46 @@ html, body {
     padding-top: 2%;
     height: 35%;
 }
-.two-options-inputs{
+.two-options-inputs /*The container of the two options buttons*/{
     display: flex;
     flex-direction: column;
     gap: 10%;
     margin-bottom: 3%;
+    height: 70%;
 }
 
 /*LOOK HERE*/
-.two-options-inputs input{
-    width: 20%; /* Set the desired width */
-    height: 20%; /* Set the desired height */
-    margin: 0;
-}
-.two-options-inputs label{
+.two-options-inputs label /*Both containers of the one-option buttons*/{
     display: flex;
     cursor: pointer;
-    flex-grow: 1;
-    gap: 30%;
+    gap: 20%;
     padding: 2%;
-    padding-left: 3%;
     /*border*/
     border: 1.5px solid rgb(7, 161, 7);
     border-radius: 4px;
     /*Font-size*/
     font-size: 1.2rem;
+    height: 10%;
+}
+.two-options-inputs input[type="radio"]{
+    height: 15px;
+    width: 50px;
+    margin: 0;
 }
 .two-options-inputs p {
     margin: 0;
 }
-.mortgage-type button{
-    margin-top: 4%;
-}
+
 
 .mortgage-type button{
     font-size: 1.5rem;
     font-weight: 500;
     height: 25%;
     border-radius: 15px;
+    border: none;
     background-color: rgb(200, 188, 15);
     box-sizing: border-box;
-    margin-top: 0%;
+    margin-bottom: 2%;
 }
 /*Bottom*/
 
@@ -165,11 +170,22 @@ html, body {
     background-color: rgb(20, 55, 82);
     color: white;
 }
-
 .empty-results{
     z-index: 1;
 }
-
 .completed-results{
     z-index: 0;
+}
+
+/*Empty dives on the sides of the bottom section*/
+
+.empty-left{
+    grid-row: 2;
+    grid-column: 1/2;
+    background-color: rgb(20, 55, 82);
+}
+.empty-right{
+    grid-row: 2;
+    grid-column: 3;
+    background-color: rgb(20, 55, 82);
 }
