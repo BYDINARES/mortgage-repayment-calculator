@@ -19,7 +19,7 @@ html, body {
     grid-column: 2/3;
     grid-row: 1/2;
     display: grid;
-    grid-template-rows: 2fr 2fr 2fr 2fr 2fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr 0.75fr;
     width: 100%;
     height: 100%;
 }
@@ -40,21 +40,22 @@ html, body {
 }
 
 .top-inputs /*The container that holds the inputs and everthing else*/{
-    padding-top: 5%;
-    height: 13%;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 
 .top-inputs div{
     display: flex;
+    align-items: stretch;
+    height: 40%;
 }
 
 /*General top-inputs on the top*/
 .top-inputs input {
-    height: 100%;
-    width: 99%;
-    font-size: 2rem;
     border-top: 1.8px solid gray;
     border-bottom: 1.8px solid gray;
+    height: 100%;
 }
 
 .side-symbol /*All the boxes on the sides of the inputs*/ {
@@ -64,6 +65,8 @@ html, body {
     background-color: rgb(203, 233, 237);
     border-top: 1.5px solid gray;
     border-bottom: 1.8px solid gray;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 /*The font size of top-inputs elements*/
@@ -73,7 +76,12 @@ html, body {
 
 /*============ Specific inputs on the top ===========*/
 
-/*1. The first input*/
+/*1. The first input-container*/
+.mortgage-amount{
+    grid-rows: 2 / 3;
+    height: 100%;
+}
+/*The input*/
 .mortgage-amount input {
     width: 80%;
     border-top-left-radius: 0%;
@@ -104,6 +112,10 @@ html, body {
 }
 
 /*2.*/
+.mortgage-term{
+    grid-rows: 3 / 4;
+    height: 100%;
+}
 .mortgage-term input{
     width: 75%;
 }
@@ -112,14 +124,16 @@ html, body {
 }
 
 /*3.*/
+.interest-rate{
+    grid-row: 4 / 5;
+    height: 100%;
+}
 .interest-rate input{
     width: 80%;
 }
 .percentage{
     width: 20%;
 }
-
-
 
 /*================ Bottom of the top ================*/
 .mortgage-type{
