@@ -1,5 +1,5 @@
 html, body {
-    height: 140vh;
+    height: 180vh;
     width: 100%;
     padding: 0%;
     margin: 0%;
@@ -10,9 +10,9 @@ html, body {
 .whole-container {
     display: grid;
     height: 100%;
-    grid-template-columns: 5% 90% 5%;
-    grid-template-rows: 60% 40%;
     width: 100%;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 55% 45%;
 }
 /* ============== Top Section Container =========== */
 .inputs-container {
@@ -173,6 +173,10 @@ a{
     font-size: 1.4rem;
     font-weight: 500;
 }
+.two-options-inputs label:focus, .two-options-inputs label:hover{
+    background-color: bisque;
+}
+
 .two-options-inputs input{
     height: clamp(20px, 10vh, 40px);
     width: clamp(20px, 10vh, 30px);
@@ -226,24 +230,55 @@ button{
 
 .completed-results{
     z-index: 1;
-    display: grid;
-    padding-bottom: 10%;
-}
-.to-pay-fees /*Container with the two fees results*/{
     display: flex;
-    flex-direction: column;
-    height: 80%;
-    width: fit-content;
+    padding-bottom: 5%;
 }
-/*Texts*/
+/*Texts of completed*/
 .completed-results p{
     text-align: left;
 }
 .completed-results h1{
+    height: fit-content;
     padding: 0%;
+    margin-bottom: 2%;
+}
+.completed-results > p{
+    height: 30%;
+    margin: 0%;
+    font-size: 1.5rem;
+    font-weight: 100;
 }
 
-
+/*Container with the two fees results*/
+.to-pay-fees {
+    display: grid;
+    height: 50%;
+    width: 100%;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 55% 45%;
+    grid-template-areas:
+      "empty-left monthly-repayments empty-right"
+      "empty-left term-repayment empty-right";
+    /*Style*/
+    background-color: rgb(5, 38, 59);
+    border-radius: 14px;
+    border-top: 4px solid rgba(255, 255, 0, 0.866);
+}
+/*The items whithin the to-pay fees container*/
+.monthly-repayments-amount{
+    grid-area: monthly-repayments;
+    color: rgba(255, 255, 0, 0.866);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.term-payments-container{
+    grid-area: term-repayment;
+}
+.results-empty-right{
+    grid-area: empty-right; 
+}
+.results-empty-left {
+    grid-area: empty-left;
+}
 
 /*The large object(the image of the calculator)*/
 object{
