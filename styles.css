@@ -264,21 +264,38 @@ button{
     border-radius: 14px;
     border-top: 4px solid rgba(255, 255, 0, 0.866);
 }
-/*The items whithin the to-pay fees container*/
-.monthly-repayments-amount{
-    grid-area: monthly-repayments;
-    color: rgba(255, 255, 0, 0.866);
-    border-bottom: 2px solid rgb(0, 0, 0);
+.to-pay-fees h3{
+    box-sizing: border-box;
+    font-weight: 200;
 }
+
+/*The items whithin the to-pay fees container*/
+.monthly-repayments-container{
+    grid-area: monthly-repayments;
+    height: 100%;
+    /*Style*/
+    border-bottom: 2px solid rgba(255, 255, 255, 0.535);
+}
+.monthly-repayments-container > h3{
+    height: 35%;
+    margin: 0%;
+    padding: 0%;
+}
+.monthly-payments-amount /*The text which holds the number of the result*/ {
+    padding: 0%;
+    margin: 0%;
+    height: 65%;
+    color:rgba(255, 255, 0, 0.866);
+}
+
+
 .term-payments-container{
     grid-area: term-repayment;
+    height: 100%;
 }
-.results-empty-right{
-    grid-area: empty-right; 
-}
-.results-empty-left {
-    grid-area: empty-left;
-}
+
+/**/
+
 
 /*The large object(the image of the calculator)*/
 object{
