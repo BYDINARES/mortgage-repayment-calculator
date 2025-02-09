@@ -228,6 +228,7 @@ button{
     text-align: center;
 } 
 
+/*=============== Completed results =================*/
 .completed-results{
     z-index: 1;
     display: flex;
@@ -241,11 +242,13 @@ button{
     height: fit-content;
     padding: 0%;
     margin-bottom: 2%;
+    font-size: 3rem;
 }
 .completed-results > p{
     height: 30%;
     margin: 0%;
-    font-size: 1.5rem;
+    padding-top: 2%;
+    font-size: 2rem;
     font-weight: 100;
 }
 
@@ -269,7 +272,7 @@ button{
     font-weight: 200;
 }
 
-/*The items whithin the to-pay fees container*/
+/*The items whithin the to-pay fees container (top)*/
 .monthly-repayments-container{
     grid-area: monthly-repayments;
     height: 100%;
@@ -279,22 +282,48 @@ button{
 .monthly-repayments-container > h3{
     height: 35%;
     margin: 0%;
-    padding: 0%;
+    padding-bottom: 2%;
+    font-size: 1.5rem;
 }
 .monthly-payments-amount /*The text which holds the number of the result*/ {
-    padding: 0%;
+    height: 75%;
     margin: 0%;
-    height: 65%;
+    padding-bottom: 3%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+}
+.monthly-payments-amount > p{
     color:rgba(255, 255, 0, 0.866);
+    font-size: 4rem;
+    margin: 0%;
 }
 
-
+/*The items whithin the to-pay fees container(bottom)*/
 .term-payments-container{
     grid-area: term-repayment;
     height: 100%;
 }
-
-/**/
+.term-payments-container > h3{
+    height: 30%;
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+}
+.term-repayment-amount{
+    height: 70%;
+    padding: 0%;
+    box-sizing: border-box;
+    margin: 0%;
+}
+.term-repayment-amount > p{
+    padding: 0%;
+    margin: 0%;
+    font-size: 2.5rem; 
+}
 
 
 /*The large object(the image of the calculator)*/
