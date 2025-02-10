@@ -29,18 +29,22 @@ html, body {
     margin-bottom: 2%;
 }
 
-.inputs-container h1{
+.inputs-container > h1{
     margin-bottom: 0%;
 }
 
 /* ============== Top Section (Elements) =========== */
 .title{
     grid-row: 1/2;
-    margin-top: 5%;
+    margin-top: 3%;
+}
+.title > button{
+    all: unset;
 }
 a{
     text-decoration: underline;
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .top-inputs /*The container that holds the inputs, the subtitle and everthing else*/{
@@ -185,9 +189,12 @@ a{
     margin: 0%;
 }
 
-button{
+#calculate-button{
     box-sizing: border-box;
     height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /*Border*/
     margin-bottom: 2%;
     border-radius: 15px;
@@ -282,8 +289,9 @@ button{
 .monthly-repayments-container > h3{
     height: 35%;
     margin: 0%;
-    padding-bottom: 2%;
+    padding-top: 5%;
     font-size: 1.5rem;
+    position: relative;
 }
 .monthly-payments-amount /*The text which holds the number of the result*/ {
     height: 75%;
@@ -295,7 +303,7 @@ button{
 }
 .monthly-payments-amount > p{
     color:rgba(255, 255, 0, 0.866);
-    font-size: 4rem;
+    font-size: 5rem;
     margin: 0%;
 }
 
@@ -305,7 +313,7 @@ button{
     height: 100%;
 }
 .term-payments-container > h3{
-    height: 30%;
+    height: 35%;
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
@@ -314,15 +322,15 @@ button{
     font-size: 1.5rem;
 }
 .term-repayment-amount{
-    height: 70%;
-    padding: 0%;
+    height: 65%;
+    padding-top: 3%;
     box-sizing: border-box;
     margin: 0%;
 }
 .term-repayment-amount > p{
     padding: 0%;
     margin: 0%;
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
 }
 
 
@@ -341,4 +349,27 @@ object{
     grid-row: 2;
     grid-column: 3;
     background-color: rgb(20, 55, 82);
+}
+
+/*=================== Media queries =================*/
+@media only screen and (min-width: 992px) {
+    html, body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .whole-container{
+        height: 60%;
+        width: 70%;
+        grid-template-columns: 5% 1fr 5% 5% 1fr 5%;
+        grid-template-rows: none;
+    }
+
+    /*Top*/
+    .inputs-container{
+        grid-column: 2/3;
+    }
+
+    /*bottom*/
 }
