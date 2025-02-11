@@ -1,5 +1,9 @@
-html, body {
+html{
     height: 180vh;
+}
+
+body {
+    height: 100%;
     width: 100%;
     padding: 0%;
     margin: 0%;
@@ -238,7 +242,6 @@ a{
 /*=============== Completed results =================*/
 .completed-results{
     z-index: 1;
-    display: flex;
     padding-bottom: 5%;
 }
 /*Texts of completed*/
@@ -353,23 +356,65 @@ object{
 
 /*=================== Media queries =================*/
 @media only screen and (min-width: 992px) {
-    html, body {
+    html{
         height: 100vh;
+        background-color: aqua;
+        padding: 0%;
+        margin: 0%;
+    }
+    body {
+        height: 100%;
+        width: 100%;
         display: flex;
         justify-content: center;
     }
 
     .whole-container{
         height: 60%;
-        width: 70%;
-        grid-template-columns: 5% 1fr 5% 5% 1fr 5%;
-        grid-template-rows: none;
+        width: 85vw;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        box-sizing: border-box;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 
     /*Top*/
     .inputs-container{
-        grid-column: 2/3;
+        grid-column: 1/2;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     /*bottom*/
+    .empty-results{
+        grid-column: 2;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        border-radius: 10px;
+        border-bottom-left-radius: 80px;
+    }
+
+    .completed-results{
+        grid-column: 2;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        border-radius: 10px;
+        border-bottom-left-radius: 80px;
+    }
+    .completed-results h1{
+        font-size: 1.5rem;
+    }
+    .completed-results > p{
+        font-size: 1.5rem;
+    }
 }
