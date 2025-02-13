@@ -357,7 +357,7 @@ object{
 /*=================== Media queries =================*/
 @media only screen and (min-width: 992px) {
     html{
-        height: 100vh;
+        height: 120vh;
         padding: 0%;
         margin: 0%;
     }
@@ -389,12 +389,43 @@ object{
         width: 100%;
         padding-left: 5%;
         padding-right: 5%;
+        /*Grid*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1.5fr 1fr;
+        grid-template-areas:
+        "header header"
+        "first-input first-input" 
+        "second-input third-input"
+        "multiple-option multiple-option"
+        "button button";
         /*Style*/
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
         background-color: white;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
+    }
+
+    .title{
+        grid-area: header;
+    }
+    .mortgage-amount{
+        grid-area: first-input;
+    }
+    .mortgage-term{
+        grid-area: second-input;
+        padding-right: 5%;
+    }
+    .interest-rate{
+        grid-area: third-input;
+        padding-left: 5%;
+    }
+    .mortgage-type{
+        grid-area: multiple-option;
+    }
+    #calculate-button{
+        grid-area: button;
     }
 
     /*bottom*/
