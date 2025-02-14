@@ -1,0 +1,465 @@
+html{
+    height: 180vh;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Plus Jakarta Sans';
+    font-style: italic;
+}
+/*================= grid container ==================*/
+.whole-container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 55% 45%;
+}
+/* ============== Top Section Container =========== */
+.inputs-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr 0.75fr;
+    width: 100%;
+    height: 100%;
+}
+
+.inputs-container p {
+    margin: 0%;
+    margin-bottom: 2%;
+}
+
+.inputs-container > h1{
+    margin-bottom: 0%;
+}
+
+/* ============== Top Section (Elements) =========== */
+.title{
+    grid-row: 1/2;
+    margin-top: 3%;
+}
+.title > button{
+    all: unset;
+}
+a{
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.top-inputs /*The container that holds the inputs, the subtitle and everthing else*/{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.input-boxes{
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+}
+
+/*General top-inputs on the top*/
+.input-boxes input {
+    height: 100%;
+    box-sizing: border-box;
+    border-top: 1.8px solid gray;
+    border-bottom: 1.8px solid gray;
+    font-size: 2rem;
+}
+
+.side-symbol /*All the boxes on the sides of the inputs*/ {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(203, 233, 237);
+    border: 1.8px solid gray;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+/*The font size of top-inputs elements*/
+.top-inputs > p{
+    font-size: 1.5rem;
+}
+
+/*============ Specific inputs in the top ===========*/
+
+/*1. The first input-container*/
+.mortgage-amount{
+    grid-row: 2 / 3;
+}
+/*The input*/
+.mortgage-amount input {
+    width: 80%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right: 1.8px solid gray;
+}
+/*The box in the first input*/
+.pound {
+    width: 20%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-left: 1.5px solid gray;
+}
+
+/*2-3*/
+/*The second input and the third*/
+.mortgage-term input, .interest-rate input {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.years, .percentage{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right: 1.8px solid gray;
+}
+
+/*2.*/
+.mortgage-term{
+    grid-row: 3 / 4;
+    height: 100%;
+}
+.mortgage-term input{
+    width: 75%;
+}
+.years{
+    width: 25%;
+}
+
+/*3.*/
+.interest-rate{
+    grid-row: 4 / 5;
+    height: 100%;
+}
+.interest-rate input{
+    width: 80%;
+}
+.percentage{
+    width: 20%;
+}
+
+/*================ Bottom of the top ================*/
+.mortgage-type{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+}
+.mortgage-type > p{
+    font-size: 1.5rem;
+}
+
+
+/*The container of the two options buttons*/
+.two-options-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    margin-bottom: 3%;
+    height: 70%;
+}
+
+/*Both two-option containers*/
+.two-options-inputs label {
+    height: 30%;
+    padding: 2%;
+    gap: 10%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /*border*/
+    border: 1.5px solid rgb(7, 161, 7);
+    border-radius: 4px;
+    /*Font-size*/
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.two-options-inputs label:focus, .two-options-inputs label:hover{
+    background-color: bisque;
+}
+
+.two-options-inputs input{
+    height: clamp(20px, 10vh, 40px);
+    width: clamp(20px, 10vh, 30px);
+}
+.two-options-inputs label p {
+    margin: 0%;
+}
+
+#calculate-button{
+    box-sizing: border-box;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Border*/
+    margin-bottom: 2%;
+    border-radius: 15px;
+    border: none;
+    /*Style*/
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background-color: rgb(200, 188, 15);
+}
+
+/*====================== Bottom =====================*/
+/*The two results sections*/
+.empty-results, .completed-results{
+    /*Measure and position*/
+    grid-column: 2/3;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+    /*Box model*/
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /*Color style*/
+    background-color: rgb(20, 55, 82);
+    color: white;
+}
+
+/*Individual containers*/
+.empty-results{
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+}
+.empty-results > p{
+    font-size: 1.5rem;
+    text-align: center;
+} 
+
+/*=============== Completed results =================*/
+.completed-results{
+    z-index: 1;
+    padding-bottom: 5%;
+}
+/*Texts of completed*/
+.completed-results p{
+    text-align: left;
+}
+.completed-results h1{
+    height: fit-content;
+    padding: 0%;
+    margin-bottom: 2%;
+    font-size: 3rem;
+}
+.completed-results > p{
+    height: 30%;
+    margin: 0%;
+    padding-top: 2%;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+/*Container with the two fees results*/
+.to-pay-fees {
+    display: grid;
+    height: 50%;
+    width: 100%;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 55% 45%;
+    grid-template-areas:
+      "empty-left monthly-repayments empty-right"
+      "empty-left term-repayment empty-right";
+    /*Style*/
+    background-color: rgb(5, 38, 59);
+    border-radius: 14px;
+    border-top: 4px solid rgba(255, 255, 0, 0.866);
+}
+.to-pay-fees h3{
+    box-sizing: border-box;
+    font-weight: 200;
+}
+
+/*The items whithin the to-pay fees container (top)*/
+.monthly-repayments-container{
+    grid-area: monthly-repayments;
+    height: 100%;
+    /*Style*/
+    border-bottom: 2px solid rgba(255, 255, 255, 0.535);
+}
+.monthly-repayments-container > h3{
+    height: 35%;
+    margin: 0%;
+    padding-top: 5%;
+    font-size: 1.5rem;
+    position: relative;
+}
+.monthly-payments-amount /*The text which holds the number of the result*/ {
+    height: 75%;
+    margin: 0%;
+    padding-bottom: 3%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+}
+.monthly-payments-amount > p{
+    color:rgba(255, 255, 0, 0.866);
+    font-size: 5rem;
+    margin: 0%;
+}
+
+/*The items whithin the to-pay fees container(bottom)*/
+.term-payments-container{
+    grid-area: term-repayment;
+    height: 100%;
+}
+.term-payments-container > h3{
+    height: 35%;
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+}
+.term-repayment-amount{
+    height: 65%;
+    padding-top: 3%;
+    box-sizing: border-box;
+    margin: 0%;
+}
+.term-repayment-amount > p{
+    padding: 0%;
+    margin: 0%;
+    font-size: 2.5rem;
+}
+
+
+/*The large object(the image of the calculator)*/
+object{
+    height: 50%;
+}
+
+/*Empty divs on the sides of the bottom section*/
+.empty-left{
+    grid-row: 2;
+    grid-column: 1/2;
+    background-color: rgb(20, 55, 82);
+}
+.empty-right{
+    grid-row: 2;
+    grid-column: 3;
+    background-color: rgb(20, 55, 82);
+}
+
+/*=================== Media queries =================*/
+@media only screen and (min-width: 992px) {
+    html{
+        height: 120vh;
+        padding: 0%;
+        margin: 0%;
+    }
+    body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(244, 236, 236);
+    }
+
+    .whole-container{
+        height: 60%;
+        width: 85vw;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        box-sizing: border-box;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        /*Style*/
+        box-shadow: -4px 4px 6px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    /*Top*/
+    .inputs-container{
+        grid-column: 1/2;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        /*Grid*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1.5fr 1fr;
+        grid-template-areas:
+        "header header"
+        "first-input first-input" 
+        "second-input third-input"
+        "multiple-option multiple-option"
+        "button button";
+        /*Style*/
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: white;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .title{
+        grid-area: header;
+    }
+    .mortgage-amount{
+        grid-area: first-input;
+    }
+    .mortgage-term{
+        grid-area: second-input;
+        padding-right: 5%;
+    }
+    .interest-rate{
+        grid-area: third-input;
+        padding-left: 5%;
+    }
+    .mortgage-type{
+        grid-area: multiple-option;
+    }
+    #calculate-button{
+        grid-area: button;
+    }
+
+    /*bottom*/
+    .empty-results{
+        grid-column: 2;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        border-bottom-left-radius: 80px;
+        border-radius: 10px;
+        
+    }
+
+    .completed-results{
+        grid-column: 2;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        border-bottom-left-radius: 80px;
+        border-radius: 10px;
+    }
+    .completed-results h1{
+        font-size: 1.5rem;
+    }
+    .completed-results > p{
+        font-size: 1.5rem;
+    }
+}
+
+/*================ Imported files ==================*/
+@import 'inputs';
+@import 'cards';
+@import 'responsive';

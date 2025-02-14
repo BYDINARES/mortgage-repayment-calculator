@@ -92,7 +92,7 @@ a{
 
 /*1. The first input-container*/
 .mortgage-amount{
-    grid-rows: 2 / 3;
+    grid-row: 2 / 3;
 }
 /*The input*/
 .mortgage-amount input {
@@ -124,7 +124,7 @@ a{
 
 /*2.*/
 .mortgage-term{
-    grid-rows: 3 / 4;
+    grid-row: 3 / 4;
     height: 100%;
 }
 .mortgage-term input{
