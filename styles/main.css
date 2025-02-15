@@ -29,131 +29,23 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .inputs-container p {
   margin: 0%;
   margin-bottom: 2%;
 }
 
-.inputs-container > h1 {
-  margin-bottom: 0%;
-}
-
-/* ============== Top Section (Elements) =========== */
 .title {
   grid-row: 1/2;
   margin-top: 3%;
 }
-
+.title > h1 {
+  margin-bottom: 0%;
+}
 .title > button {
   all: unset;
-}
-
-a {
   text-decoration: underline;
   cursor: pointer;
   font-size: 1.5rem;
-}
-
-.top-inputs {
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-
-.input-boxes {
-  display: flex;
-  flex-direction: row;
-  height: 40%;
-}
-
-/*General top-inputs on the top*/
-.input-boxes input {
-  height: 100%;
-  box-sizing: border-box;
-  border-top: 1.8px solid gray;
-  border-bottom: 1.8px solid gray;
-  font-size: 2rem;
-}
-
-.side-symbol {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(203, 233, 237);
-  border: 1.8px solid gray;
-  box-sizing: border-box;
-  font-size: 1.4rem;
-}
-
-/*The font size of top-inputs elements*/
-.top-inputs > p {
-  font-size: 1.5rem;
-}
-
-/*============ Specific inputs in the top ===========*/
-/*1. The first input-container*/
-.mortgage-amount {
-  grid-row: 2/3;
-}
-
-/*The input*/
-.mortgage-amount input {
-  width: 80%;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-right: 1.8px solid gray;
-}
-
-/*The box in the first input*/
-.pound {
-  width: 20%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-left: 1.5px solid gray;
-}
-
-/*2-3*/
-/*The second input and the third*/
-.mortgage-term input, .interest-rate input {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.years, .percentage {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-right: 1.8px solid gray;
-}
-
-/*2.*/
-.mortgage-term {
-  grid-row: 3/4;
-  height: 100%;
-}
-
-.mortgage-term input {
-  width: 75%;
-}
-
-.years {
-  width: 25%;
-}
-
-/*3.*/
-.interest-rate {
-  grid-row: 4/5;
-  height: 100%;
-}
-
-.interest-rate input {
-  width: 80%;
-}
-
-.percentage {
-  width: 20%;
 }
 
 /*================ Bottom of the top ================*/
@@ -162,7 +54,6 @@ a {
   flex-direction: column;
   padding-top: 2%;
 }
-
 .mortgage-type > p {
   font-size: 1.5rem;
 }
@@ -175,8 +66,6 @@ a {
   margin-bottom: 3%;
   height: 70%;
 }
-
-/*Both two-option containers*/
 .two-options-inputs label {
   height: 30%;
   padding: 2%;
@@ -192,6 +81,7 @@ a {
   font-weight: 500;
 }
 
+/*Both two-option containers*/
 .two-options-inputs label:focus, .two-options-inputs label:hover {
   background-color: bisque;
 }
@@ -376,6 +266,98 @@ object {
   background-color: rgb(20, 55, 82);
 }
 
+/*================ Imported files ==================*/
+/*============= General top-inputs on the top ================*/
+/*The font size of top-inputs elements*/
+.top-inputs {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+.top-inputs > p {
+  font-size: 1.5rem;
+}
+
+.input-boxes {
+  display: flex;
+  flex-direction: row;
+  height: 40%;
+}
+.input-boxes input {
+  height: 100%;
+  box-sizing: border-box;
+  border-top: 1.8px solid gray;
+  border-bottom: 1.8px solid gray;
+  font-size: 2rem;
+}
+.input-boxes .side-symbol {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(203, 233, 237);
+  border: 1.8px solid gray;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+}
+
+/*================ Specific inputs in the top ==============*/
+/*1. The first input-container*/
+.mortgage-amount {
+  grid-row: 2/3;
+  /*The input*/
+  /*The box in the first input*/
+}
+.mortgage-amount input {
+  width: 80%;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1.8px solid gray;
+}
+.mortgage-amount .pound {
+  width: 20%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-left: 1.5px solid gray;
+}
+
+/*2-3*/
+/*The second input and the third*/
+.mortgage-term input, .interest-rate input {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.mortgage-term .years, .mortgage-term .percentage, .interest-rate .years, .interest-rate .percentage {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1.8px solid gray;
+}
+
+/*2.*/
+.mortgage-term {
+  grid-row: 3/4;
+  height: 100%;
+}
+.mortgage-term input {
+  width: 75%;
+}
+.mortgage-term .years {
+  width: 25%;
+}
+
+/*3.*/
+.interest-rate {
+  grid-row: 4/5;
+  height: 100%;
+}
+.interest-rate input {
+  width: 80%;
+}
+.interest-rate .percentage {
+  width: 20%;
+}
+
 /*=================== Media queries =================*/
 @media only screen and (min-width: 992px) {
   html {
@@ -424,6 +406,7 @@ object {
   .title {
     grid-area: header;
   }
+  /*The three inputs in the top*/
   .mortgage-amount {
     grid-area: first-input;
   }
@@ -435,6 +418,7 @@ object {
     grid-area: third-input;
     padding-left: 5%;
   }
+  /*The */
   .mortgage-type {
     grid-area: multiple-option;
   }
@@ -468,5 +452,4 @@ object {
   .completed-results > p {
     font-size: 1.5rem;
   }
-}
-/*================ Imported files ==================*//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

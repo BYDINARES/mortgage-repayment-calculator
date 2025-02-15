@@ -18,6 +18,7 @@ body {
     grid-template-columns: 5% 90% 5%;
     grid-template-rows: 55% 45%;
 }
+
 /* ============== Top Section Container =========== */
 .inputs-container {
     grid-column: 2/3;
@@ -26,124 +27,28 @@ body {
     grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr 0.75fr;
     width: 100%;
     height: 100%;
+
+    p {
+        margin: 0%;
+        margin-bottom: 2%;
+    }
+    
 }
 
-.inputs-container p {
-    margin: 0%;
-    margin-bottom: 2%;
-}
-
-.inputs-container > h1{
-    margin-bottom: 0%;
-}
-
-/* ============== Top Section (Elements) =========== */
 .title{
     grid-row: 1/2;
     margin-top: 3%;
-}
-.title > button{
-    all: unset;
-}
-a{
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
+    
+    > h1{
+        margin-bottom: 0%;
+    }
 
-.top-inputs /*The container that holds the inputs, the subtitle and everthing else*/{
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-}
-
-.input-boxes{
-    display: flex;
-    flex-direction: row;
-    height: 40%;
-}
-
-/*General top-inputs on the top*/
-.input-boxes input {
-    height: 100%;
-    box-sizing: border-box;
-    border-top: 1.8px solid gray;
-    border-bottom: 1.8px solid gray;
-    font-size: 2rem;
-}
-
-.side-symbol /*All the boxes on the sides of the inputs*/ {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(203, 233, 237);
-    border: 1.8px solid gray;
-    box-sizing: border-box;
-    font-size: 1.4rem;
-}
-
-/*The font size of top-inputs elements*/
-.top-inputs > p{
-    font-size: 1.5rem;
-}
-
-/*============ Specific inputs in the top ===========*/
-
-/*1. The first input-container*/
-.mortgage-amount{
-    grid-row: 2 / 3;
-}
-/*The input*/
-.mortgage-amount input {
-    width: 80%;
-    border-top-left-radius: 0%;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-right: 1.8px solid gray;
-}
-/*The box in the first input*/
-.pound {
-    width: 20%;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-left: 1.5px solid gray;
-}
-
-/*2-3*/
-/*The second input and the third*/
-.mortgage-term input, .interest-rate input {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-.years, .percentage{
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-right: 1.8px solid gray;
-}
-
-/*2.*/
-.mortgage-term{
-    grid-row: 3 / 4;
-    height: 100%;
-}
-.mortgage-term input{
-    width: 75%;
-}
-.years{
-    width: 25%;
-}
-
-/*3.*/
-.interest-rate{
-    grid-row: 4 / 5;
-    height: 100%;
-}
-.interest-rate input{
-    width: 80%;
-}
-.percentage{
-    width: 20%;
+    > button{
+        all: unset;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
 }
 
 /*================ Bottom of the top ================*/
@@ -151,11 +56,11 @@ a{
     display: flex;
     flex-direction: column;
     padding-top: 2%;
+    
+    > p{
+        font-size: 1.5rem;
+    }
 }
-.mortgage-type > p{
-    font-size: 1.5rem;
-}
-
 
 /*The container of the two options buttons*/
 .two-options-inputs {
@@ -164,23 +69,24 @@ a{
     gap: 5%;
     margin-bottom: 3%;
     height: 70%;
+    
+    label {
+        height: 30%;
+        padding: 2%;
+        gap: 10%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        /*border*/
+        border: 1.5px solid rgb(7, 161, 7);
+        border-radius: 4px;
+        /*Font-size*/
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
 }
 
 /*Both two-option containers*/
-.two-options-inputs label {
-    height: 30%;
-    padding: 2%;
-    gap: 10%;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    /*border*/
-    border: 1.5px solid rgb(7, 161, 7);
-    border-radius: 4px;
-    /*Font-size*/
-    font-size: 1.4rem;
-    font-weight: 500;
-}
 .two-options-inputs label:focus, .two-options-inputs label:hover{
     background-color: bisque;
 }
@@ -354,112 +260,8 @@ object{
     background-color: rgb(20, 55, 82);
 }
 
-/*=================== Media queries =================*/
-@media only screen and (min-width: 992px) {
-    html{
-        height: 120vh;
-        padding: 0%;
-        margin: 0%;
-    }
-    body {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        background-color: rgb(244, 236, 236);
-    }
 
-    .whole-container{
-        height: 60%;
-        width: 85vw;
-        margin-top: 10%;
-        margin-bottom: 10%;
-        box-sizing: border-box;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        /*Style*/
-        box-shadow: -4px 4px 6px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    /*Top*/
-    .inputs-container{
-        grid-column: 1/2;
-        box-sizing: border-box;
-        height: 100%;
-        width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
-        /*Grid*/
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1.5fr 1fr;
-        grid-template-areas:
-        "header header"
-        "first-input first-input" 
-        "second-input third-input"
-        "multiple-option multiple-option"
-        "button button";
-        /*Style*/
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        background-color: white;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-    }
-
-    .title{
-        grid-area: header;
-    }
-    .mortgage-amount{
-        grid-area: first-input;
-    }
-    .mortgage-term{
-        grid-area: second-input;
-        padding-right: 5%;
-    }
-    .interest-rate{
-        grid-area: third-input;
-        padding-left: 5%;
-    }
-    .mortgage-type{
-        grid-area: multiple-option;
-    }
-    #calculate-button{
-        grid-area: button;
-    }
-
-    /*bottom*/
-    .empty-results{
-        grid-column: 2;
-        grid-row: 1;
-        height: 100%;
-        width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
-        border-bottom-left-radius: 80px;
-        border-radius: 10px;
-        
-    }
-
-    .completed-results{
-        grid-column: 2;
-        grid-row: 1;
-        height: 100%;
-        width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
-        border-bottom-left-radius: 80px;
-        border-radius: 10px;
-    }
-    .completed-results h1{
-        font-size: 1.5rem;
-    }
-    .completed-results > p{
-        font-size: 1.5rem;
-    }
-}
 
 /*================ Imported files ==================*/
 @import 'inputs';
-@import 'cards';
 @import 'responsive';
