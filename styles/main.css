@@ -79,20 +79,17 @@ body {
   /*Font-size*/
   font-size: 1.4rem;
   font-weight: 500;
+  /*Both two-option containers*/
 }
-
-/*Both two-option containers*/
-.two-options-inputs label:focus, .two-options-inputs label:hover {
+.two-options-inputs label p {
+  margin: 0%;
+}
+.two-options-inputs label :focus, .two-options-inputs label :hover {
   background-color: bisque;
 }
-
 .two-options-inputs input {
   height: clamp(20px, 10vh, 40px);
   width: clamp(20px, 10vh, 30px);
-}
-
-.two-options-inputs label p {
-  margin: 0%;
 }
 
 #calculate-button {
@@ -112,7 +109,7 @@ body {
   background-color: rgb(200, 188, 15);
 }
 
-/*====================== Bottom =====================*/
+/*====================== BOTTOM =====================*/
 /*The two results sections*/
 .empty-results, .completed-results {
   /*Measure and position*/
@@ -136,7 +133,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .empty-results > p {
   font-size: 1.5rem;
   text-align: center;
@@ -147,12 +143,6 @@ body {
   z-index: 1;
   padding-bottom: 5%;
 }
-
-/*Texts of completed*/
-.completed-results p {
-  text-align: left;
-}
-
 .completed-results h1 {
   height: -moz-fit-content;
   height: fit-content;
@@ -160,13 +150,13 @@ body {
   margin-bottom: 2%;
   font-size: 3rem;
 }
-
 .completed-results > p {
   height: 30%;
   margin: 0%;
   padding-top: 2%;
   font-size: 2rem;
   font-weight: 100;
+  text-align: left;
 }
 
 /*Container with the two fees results*/
@@ -182,7 +172,6 @@ body {
   border-radius: 14px;
   border-top: 4px solid rgba(255, 255, 0, 0.866);
 }
-
 .to-pay-fees h3 {
   box-sizing: border-box;
   font-weight: 200;
@@ -195,7 +184,6 @@ body {
   /*Style*/
   border-bottom: 2px solid rgba(255, 255, 255, 0.535);
 }
-
 .monthly-repayments-container > h3 {
   height: 35%;
   margin: 0%;
@@ -204,6 +192,7 @@ body {
   position: relative;
 }
 
+/*The text which holds the number of the result*/
 .monthly-payments-amount {
   height: 75%;
   margin: 0%;
@@ -212,7 +201,6 @@ body {
   display: flex;
   align-items: flex-start;
 }
-
 .monthly-payments-amount > p {
   color: rgba(255, 255, 0, 0.866);
   font-size: 5rem;
@@ -224,7 +212,6 @@ body {
   grid-area: term-repayment;
   height: 100%;
 }
-
 .term-payments-container > h3 {
   height: 35%;
   padding: 0%;
@@ -241,7 +228,6 @@ body {
   box-sizing: border-box;
   margin: 0%;
 }
-
 .term-repayment-amount > p {
   padding: 0%;
   margin: 0%;

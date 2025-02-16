@@ -1,125 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="stylesheet" href="styles\main.css">
+    <link rel="stylesheet" href="styles\main.css" />
 
-  <style>
-    @font-face {
-      font-family: 'Plus Jakarta Sans';
-      src: url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('woff2'),
-      url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('woff'),
-      url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('truetype');
-      font-style: italic;
-      font-weight: 100 900;
-    }
+    <style>
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf)
+            format("woff2"),
+          url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf)
+            format("woff"),
+          url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf)
+            format("truetype");
+        font-style: italic;
+        font-weight: 100 900;
+      }
 
-    @font-face {
-      font-family: 'Plus Jakarta Sans';
-      src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('woff2'),
-      url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('woff'), 
-      url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('truetype');
-      font-style: normal;
-      font-weight: 100 900;
-    }
-  </style>
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf)
+            format("woff2"),
+          url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format("woff"),
+          url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf)
+            format("truetype");
+        font-style: normal;
+        font-weight: 100 900;
+      }
+    </style>
 
-  <script src="script.js"></script>
-</head>
-<body>
-  <div class="whole-container">
-    <div class="inputs-container">
-      <div class="title">
-        <h1>Mortgage Calculator</h1>
-        <button class="clear-all">Clear All</button>
-      </div>
-      
-    
-      <div class="top-inputs mortgage-amount">
-        <p>Mortgage Amount</p>
-        <div class="input-boxes">
-          <div class="side-symbol pound">£</div>
-          <input type="text">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="whole-container">
+      <div class="inputs-container">
+        <div class="title">
+          <h1>Mortgage Calculator</h1>
+          <button class="clear-all">Clear All</button>
         </div>
-      </div>
-    
-      <div class="top-inputs mortgage-term">
-        <p>Mortgage Term</p>
-        <div class="input-boxes">
-          <input type="text">
-          <div class="side-symbol years">years</div>
+
+        <div class="top-inputs mortgage-amount">
+          <p>Mortgage Amount</p>
+          <div class="input-boxes">
+            <div class="side-symbol pound">£</div>
+            <input type="text" />
+          </div>
         </div>
-      </div>
-        
-      <div class="top-inputs interest-rate">
-        <p>Interest Rate</p>
-        <div class="input-boxes">
-          <input type="text">
-          <div class="side-symbol percentage">%</div>
+
+        <div class="top-inputs mortgage-term">
+          <p>Mortgage Term</p>
+          <div class="input-boxes">
+            <input type="text" />
+            <div class="side-symbol years">years</div>
+          </div>
         </div>
-      </div>
-      <div class="mortgage-type">
-        <p>Mortgage Type</p>
-        
-        <!--The two options-->
-        <div class="two-options-inputs">
-          <label>
-            <div>
-              <input type="radio" name="mortgageType">
-            </div>
-            <p>Repayment</p>
-          </label>
-  
-          <label>
-            <input type="radio" name="mortgageType">
-            <p>Interest Only</p>
-          </label>
+
+        <div class="top-inputs interest-rate">
+          <p>Interest Rate</p>
+          <div class="input-boxes">
+            <input type="text" />
+            <div class="side-symbol percentage">%</div>
+          </div>
         </div>
-      </div>
+        <div class="mortgage-type">
+          <p>Mortgage Type</p>
+
+          <!--The two options-->
+          <div class="two-options-inputs">
+            <label>
+              <div>
+                <input type="radio" name="mortgageType" />
+              </div>
+              <p>Repayment</p>
+            </label>
+
+            <label>
+              <input type="radio" name="mortgageType" />
+              <p>Interest Only</p>
+            </label>
+          </div>
+        </div>
         <!--Solution button-->
-      <button id="calculate-button">
-        <object data="assets\images\icon-calculator.svg" type="image/svg+xml"></object>
-        Calculate Repayments
-      </button>
-    </div>
-    <!-- Empty results start -->
-    <div class="empty-results">
-      <object data="assets\images\illustration-empty.svg" type="image/svg+xml"></object>
-      <h1>Results shown here</h1>
-      <p>
-        Complete the form and click “calculate repayments” to see what 
-        your monthly repayments would be.
-      </p>
-    </div>
-    <!-- Completed results start -->
-    <div class="completed-results">
-      <h1>Your results</h1>
-      <p>
-        Your results are shown below based on the information you provided. 
-        To adjust the results, edit the form and click “calculate repayments” again.
-      </p>    
-      <div class="to-pay-fees">
-        <div class="monthly-repayments-container">
-          <h3>Your monthly repayments</h3>
+        <button id="calculate-button">
+          <object
+            data="assets\images\icon-calculator.svg"
+            type="image/svg+xml"
+          ></object>
+          Calculate Repayments
+        </button>
+      </div>
+      <!-- Empty results start -->
+      <div class="empty-results">
+        <object
+          data="assets\images\illustration-empty.svg"
+          type="image/svg+xml"
+        ></object>
+        <h1>Results shown here</h1>
+        <p>
+          Complete the form and click “calculate repayments” to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+      <!-- Completed results start -->
+      <div class="completed-results">
+        <h1>Your results</h1>
+        <p>
+          Your results are shown below based on the information you provided. To
+          adjust the results, edit the form and click “calculate repayments”
+          again.
+        </p>
+        <div class="to-pay-fees">
+          <div class="monthly-repayments-container">
+            <h3>Your monthly repayments</h3>
 
-          <div class="payments monthly-payments-amount">
-            <p>hello</p>
+            <div class="payments monthly-payments-amount">
+              <p>hello</p>
+            </div>
           </div>
-        </div>
-        <div class="term-payments-container">
-          <h3>Total you'll repay over the term</h3>
-          <div class="payments term-repayment-amount">
-            <p>hello</p>
+          <div class="term-payments-container">
+            <h3>Total you'll repay over the term</h3>
+            <div class="payments term-repayment-amount">
+              <p>hello</p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="empty-div empty-left"></div>
+      <div class="empty-div empty-right"></div>
     </div>
-    <div class="empty-div empty-left"></div>
-    <div class="empty-div empty-right"></div>
-  </div>
-</body>
+  </body>
 </html>
