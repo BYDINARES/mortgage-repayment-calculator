@@ -1,3 +1,8 @@
+/*=============== Imported files ===============*/
+@use "inputs";
+@use "_responsive";
+
+/*=================== Normal code ======================*/
 html {
   height: 180vh;
 }
@@ -83,14 +88,13 @@ body {
     font-size: 1.4rem;
     font-weight: 500;
 
-    p {
-      margin: 0%;
-    }
-
     /*Both two-option containers*/
     :focus,
     :hover {
       background-color: bisque;
+    }
+    p {
+      margin: 0%;
     }
   }
 
@@ -267,7 +271,3 @@ object {
   grid-column: 3;
   background-color: rgb(20, 55, 82);
 }
-
-/*================ Imported files ==================*/
-@import "inputs";
-@import "responsive";

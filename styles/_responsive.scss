@@ -12,6 +12,7 @@
     justify-content: center;
     background-color: rgb(244, 236, 236);
   }
+
   .whole-container {
     height: 60%;
     width: 85vw;
@@ -23,6 +24,7 @@
     /*Style*/
     box-shadow: -4px 4px 6px 0px rgba(0, 0, 0, 0.1);
   }
+
   /*Top*/
   .inputs-container {
     grid-column: 1/2;
@@ -35,7 +37,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1.5fr 1fr;
-    grid-template-areas: "header header" "first-input first-input" "second-input third-input" "multiple-option multiple-option" "button button";
+    grid-template-areas:
+      "header header"
+      "first-input first-input"
+      "second-input third-input"
+      "multiple-option multiple-option"
+      "button button";
     /*Style*/
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -43,12 +50,18 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
+
   .title {
     grid-area: header;
   }
+
   /*The three inputs in the top*/
   .mortgage-amount {
     grid-area: first-input;
+  }
+  .side-symbol {
+    width: auto;
+    font-size: 1rem;
   }
   .mortgage-term {
     grid-area: second-input;
@@ -58,6 +71,7 @@
     grid-area: third-input;
     padding-left: 5%;
   }
+
   /*The */
   .mortgage-type {
     grid-area: multiple-option;
@@ -65,6 +79,7 @@
   #calculate-button {
     grid-area: button;
   }
+
   /*bottom*/
   .empty-results {
     grid-column: 2;
@@ -76,6 +91,7 @@
     border-bottom-left-radius: 80px;
     border-radius: 10px;
   }
+
   .completed-results {
     grid-column: 2;
     grid-row: 1;
@@ -85,11 +101,13 @@
     padding-right: 5%;
     border-bottom-left-radius: 80px;
     border-radius: 10px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    > p {
+      font-size: 1.5rem;
+    }
   }
-  .completed-results h1 {
-    font-size: 1.5rem;
-  }
-  .completed-results > p {
-    font-size: 1.5rem;
-  }
-}/*# sourceMappingURL=responsive.css.map */
+}
