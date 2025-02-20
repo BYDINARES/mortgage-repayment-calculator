@@ -1,7 +1,3 @@
-/*=============== Imported files ===============*/
-@import "_inputs";
-@import "_responsive";
-
 /*=================== Normal code ======================*/
 html {
   height: 180vh;
@@ -271,3 +267,7 @@ object {
   grid-column: 3;
   background-color: rgb(20, 55, 82);
 }
+
+/*=============== Imported files ===============*/
+@import "_inputs1";
+@import "_responsive1";
