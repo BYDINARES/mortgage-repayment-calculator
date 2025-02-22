@@ -53,6 +53,8 @@ body {
 }
 .title > button {
   all: unset;
+  font-size: 1.3rem;
+  text-decoration: underline;
 }
 a {
   text-decoration: underline;
@@ -248,7 +250,7 @@ a {
 
 /*Individual containers*/
 .empty-results {
-  z-index: 0;
+  z-index: 1;
   justify-content: center;
   align-items: center;
 }
@@ -259,7 +261,7 @@ a {
 
 /*=============== Completed results =================*/
 .completed-results {
-  z-index: 1;
+  z-index: 0;
   padding-bottom: 5%;
 }
 /*Texts of completed*/
@@ -305,27 +307,25 @@ a {
   grid-area: monthly-repayments;
   height: 100%;
   /*Style*/
-  border-bottom: 2px solid rgba(255, 255, 255, 0.535);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.179);
 }
 .monthly-repayments-container > h3 {
   height: 35%;
   margin: 0%;
   padding-top: 5%;
   font-size: 1.5rem;
-  position: relative;
+  box-sizing: border-box;
 }
 .monthly-payments-amount /*The text which holds the number of the result*/ {
-  height: 75%;
-  margin: 0%;
-  padding-bottom: 3%;
   box-sizing: border-box;
-  display: flex;
-  align-items: flex-start;
+  height: 65%;
+  padding-bottom: 10%;
+  margin: 0%;
 }
 .monthly-payments-amount > p {
+  margin: 0%;
   color: rgba(255, 255, 0, 0.866);
   font-size: 5rem;
-  margin: 0%;
 }
 
 /*The items whithin the to-pay fees container(bottom)*/
@@ -429,6 +429,16 @@ object {
   .title {
     grid-area: header;
     align-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+  }
+  .title > h1 {
+    width: 50%;
+  }
+  .title > button {
+    width: 30%;
+    text-align: center;
   }
 
   .mortgage-amount {
@@ -491,7 +501,7 @@ object {
     border-bottom-left-radius: 90px;
   }
   .empty-results > p {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .completed-results {
@@ -507,6 +517,17 @@ object {
     font-size: 1.5rem;
   }
   .completed-results > p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .monthly-repayments-container > h3 {
+    font-size: 1.4rem;
+  }
+  .monthly-payments-amount > p {
+    text-align: start;
+  }
+
+  .term-payments-container > h3 {
+    font-size: 1.2rem;
   }
 }
