@@ -1,5 +1,5 @@
 html {
-  height: 180vh;
+  height: 300vw;
 }
 
 body {
@@ -374,7 +374,7 @@ object {
 /*=========================== Media queries =================================*/
 @media only screen and (min-width: 992px) {
   html {
-    height: 120vh;
+    height: 80vw;
     padding: 0%;
     margin: 0%;
   }
