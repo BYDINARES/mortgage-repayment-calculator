@@ -73,6 +73,10 @@ a {
   flex-direction: row;
   height: 40%;
 }
+.input-boxes input:hover,
+.input-boxes input:focus {
+  border-color: rgb(246, 156, 82);
+}
 
 /*General top-inputs on the top*/
 .input-boxes input {
@@ -196,7 +200,7 @@ a {
 .two-options-inputs label:focus,
 .two-options-inputs label:hover {
   background-color: bisque;
-  border-color: rgb(246, 156, 82);
+  border-color: rgb(246, 156, 82); /*¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨*/
 }
 
 .two-options-inputs input {
@@ -229,11 +233,11 @@ a {
 }
 #calculate-button:focus,
 #calculate-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   background-color: rgba(200, 188, 15, 0.765);
 }
 
-/*================================ Bottom ==================================*/
+/*=============================== Bottom ==================================*/
 /*The two results sections*/
 .empty-results,
 .completed-results {
@@ -264,7 +268,7 @@ a {
   text-align: center;
 }
 
-/*=========================== Completed results =================================*/
+/*==================== Completed results =================================*/
 .completed-results {
   z-index: 0;
   padding-bottom: 5%;
@@ -379,7 +383,7 @@ object {
   background-color: rgb(20, 55, 82);
 }
 
-/*=========================== Media queries =================================*/
+/*=========================== Media queries ===============================*/
 @media only screen and (min-width: 992px) {
   html {
     height: 80vw;
@@ -503,6 +507,7 @@ object {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
+    z-index: 0;
   }
 
   .empty-results,
