@@ -1,36 +1,47 @@
-//- See form validation messages if any field is incomplete
 //================= General interactable elements =====================
 // The number inputs
-const mortgageAmount = document.getElementsByClassName("mortgage-amount");
-const mortgageAmountValue = +mortgageAmount.value;
+const mortgageAmount = document.querySelector(".mortgage-amount");
 
-const mortgageTerm = document.getElementsByClassName("mortgage-term");
-const mortgageTermValue = +mortgageTerm.value;
+const mortgageTerm = document.querySelector(".mortgage-term");
 
-const interestRate = document.getElementsByClassName("interest-rate");
-const interestRateValue = +interestRate.value;
+const interestRate = document.querySelector(".interest-rate");
 
 //The two option inputs
 
-//BUTTON
+//button
 const button = document.getElementById("calculate-button");
 
-//============== The bottom section of interactable elements ===============
+//======================= THE RESULTS ELEMENTS ==========================
 //-------1
-const monthlyRepaymnets = document.getElementsByClassName(
+const monthlyRepaymnets = document.querySelector(
   ".monthly-payments-amount > p"
 );
-monthlyRepaymnets.textContent = "";
-//--------1
-const totalPayment = document.getElementsByClassName(
-  ".term-repayment-amount > p"
-);
-totalPayment.textContent = "";
 
-//============================= Functions =================================
+//--------2
+const totalPayment = document.querySelector(".term-repayment-amount > p");
+
+//========================== Function ================================//
 function amountToPay() {
+  const mortgageAmountValue = +mortgageAmount.value;
+  const mortgageTermValue = +mortgageTerm.value;
+  const interestRateValue = +interestRate.value;
+
   //The rate
-  const monthlyInterestRate = interestRateValue / 12;
+  const monthlyInterestRate = interestRateValue / 100 / 12;
   //The number of months to pay for
   const monthsTerm = mortgageTermValue * 12;
+  //The bottom section of the fraction (operation)
+  const denominator = 1 - Math.pow(1 + monthlyInterestRate, -monthsTerm);
+
+  const monthlyFractionResult =
+    (mortgageAmountValue * monthlyInterestRate) / denominator;
+
+  const totalRepaymentAmount = monthlyFractionResult * monthsTerm;
+  //- See form validation messages if any field is incomplete
+
+  monthlyRepaymnets.textContent = monthlyFractionResult;
+  totalPayment.textContent = totalRepaymentAmount;
+  return;
 }
+
+button.addEventListener("click", amountToPay);
