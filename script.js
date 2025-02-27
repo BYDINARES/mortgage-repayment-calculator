@@ -1,10 +1,10 @@
 //================= General interactable elements =====================
 // The number inputs
-const mortgageAmount = document.querySelector(".mortgage-amount");
+const mortgageAmount = document.querySelector(".mortgage-amount input");
 
-const mortgageTerm = document.querySelector(".mortgage-term");
+const mortgageTerm = document.querySelector(".mortgage-term input");
 
-const interestRate = document.querySelector(".interest-rate");
+const interestRate = document.querySelector(".interest-rate input");
 
 //The two option inputs
 
@@ -41,7 +41,6 @@ function amountToPay() {
 
   monthlyRepaymnets.textContent = monthlyFractionResult;
   totalPayment.textContent = totalRepaymentAmount;
-  return;
 }
 
 button.addEventListener("click", amountToPay);
