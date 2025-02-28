@@ -7,6 +7,9 @@ const mortgageTerm = document.querySelector(".mortgage-term input");
 const interestRate = document.querySelector(".interest-rate input");
 
 //The two option inputs
+let mortgageType = document.querySelector(
+  'input[name="mortgageType"]:checked'
+).value;
 
 //button
 const button = document.getElementById("calculate-button");
@@ -26,21 +29,28 @@ function amountToPay() {
   const mortgageTermValue = +mortgageTerm.value;
   const interestRateValue = +interestRate.value;
 
-  //The rate
-  const monthlyInterestRate = interestRateValue / 100 / 12;
-  //The number of months to pay for
-  const monthsTerm = mortgageTermValue * 12;
-  //The bottom section of the fraction (operation)
-  const denominator = 1 - Math.pow(1 + monthlyInterestRate, -monthsTerm);
+  let monthlyFractionResult;
+  let totalRepaymentAmount;
 
-  const monthlyFractionResult =
-    (mortgageAmountValue * monthlyInterestRate) / denominator;
+  if (mortgageType === "repayment") {
+    //The rate
+    const monthlyInterestRate = interestRateValue / 100 / 12;
+    //The number of months to pay for
+    const monthsTerm = mortgageTermValue * 12;
+    //The bottom section of the fraction (operation)
+    const denominator = 1 - Math.pow(1 + monthlyInterestRate, -monthsTerm);
 
-  const totalRepaymentAmount = monthlyFractionResult * monthsTerm;
-  //- See form validation messages if any field is incomplete
+    monthlyFractionResult =
+      (mortgageAmountValue * monthlyInterestRate) / denominator;
 
-  monthlyRepaymnets.textContent = monthlyFractionResult;
-  totalPayment.textContent = totalRepaymentAmount;
+    totalRepaymentAmount = monthlyFractionResult * monthsTerm;
+    //- See form validation messages if any field is incomplete
+
+    monthlyRepaymnets.textContent = Math.round(monthlyFractionResult);
+    totalPayment.textContent = Math.round(totalRepaymentAmount);
+  } else {
+    monthlyFractionResult = (mortgageAmountValue * interestRateValue) / 12;
+  }
 }
 
 button.addEventListener("click", amountToPay);
