@@ -55,11 +55,7 @@ body {
   all: unset;
   font-size: 1.3rem;
   text-decoration: underline;
-}
-a {
-  text-decoration: underline;
   cursor: pointer;
-  font-size: 1.5rem;
 }
 
 .top-inputs /*The container that holds the inputs, the subtitle and everthing else*/ {

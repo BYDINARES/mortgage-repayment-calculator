@@ -6,13 +6,9 @@ const mortgageTerm = document.querySelector(".mortgage-term input");
 
 const interestRate = document.querySelector(".interest-rate input");
 
-//The two option inputs
-let mortgageType = document.querySelector(
-  'input[name="mortgageType"]:checked'
-).value;
-
 //button
 const button = document.getElementById("calculate-button");
+const clearAllButton = document.querySelector(".clear-all");
 
 //======================= THE RESULTS ELEMENTS ==========================
 //-------1
@@ -29,8 +25,10 @@ function amountToPay() {
   const mortgageTermValue = +mortgageTerm.value;
   const interestRateValue = +interestRate.value;
 
-  let monthlyFractionResult;
-  let totalRepaymentAmount;
+  //The two option inputs
+  let mortgageType = document.querySelector(
+    'input[name="mortgageType"]:checked'
+  ).value;
 
   if (mortgageType === "repayment") {
     //The rate
@@ -40,17 +38,35 @@ function amountToPay() {
     //The bottom section of the fraction (operation)
     const denominator = 1 - Math.pow(1 + monthlyInterestRate, -monthsTerm);
 
-    monthlyFractionResult =
+    const monthlyFractionResult =
       (mortgageAmountValue * monthlyInterestRate) / denominator;
 
-    totalRepaymentAmount = monthlyFractionResult * monthsTerm;
+    const totalRepaymentAmount = monthlyFractionResult * monthsTerm;
     //- See form validation messages if any field is incomplete
 
     monthlyRepaymnets.textContent = Math.round(monthlyFractionResult);
     totalPayment.textContent = Math.round(totalRepaymentAmount);
+  } else if (mortgageType === "interest-only") {
+    const monthlyInterestToPay =
+      (mortgageAmountValue * (interestRateValue / 100)) / 12;
+    monthlyRepaymnets.textContent = Math.round(monthlyInterestToPay);
+
+    const totalInterestsToPay = monthlyInterestToPay * 12 * mortgageTermValue;
+    totalPayment.textContent = Math.round(
+      totalInterestsToPay + mortgageAmountValue
+    );
   } else {
-    monthlyFractionResult = (mortgageAmountValue * interestRateValue) / 12;
+    monthlyRepaymnets.textContent = "";
+    totalPayment.textContent = "";
   }
 }
-
 button.addEventListener("click", amountToPay);
+
+function clearAll() {
+  mortgageAmount.textContent = "";
+  mortgageTerm.textContent = "";
+  interestRate.textContent = "";
+  monthlyRepaymnets.textContent = "";
+  totalPayment.textContent = "";
+}
+clearAllButton.addEventListener("click", clearAll);
