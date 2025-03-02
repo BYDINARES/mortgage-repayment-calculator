@@ -25,6 +25,30 @@ function amountToPay() {
   const mortgageTermValue = +mortgageTerm.value;
   const interestRateValue = +interestRate.value;
 
+  function isTheProcessCorrect() {
+    /* if (!+mortgageAmountValue) {
+      mortgageAmount.insertAdjacentHTML(
+        "afterend",
+        <p>Please enter a valid number</p>
+      );
+    } else if  */
+    const arrayOfInputElements = [
+      mortgageAmountValue,
+      mortgageTermValue,
+      interestRateValue,
+    ];
+    for (let i = 0; i < arrayOfInputElements.length; i++) {
+      if (!arrayOfInputElements[i].value) {
+        arrayOfInputElements[i].insertAdjacentHTML(
+          "afterend",
+          "<p>Please enter a valid number</p>"
+        );
+        if (arrayOfInputElements[i].value === mortgageAmount) {
+        }
+      }
+    }
+  }
+
   //The two option inputs
   let mortgageType = document.querySelector(
     'input[name="mortgageType"]:checked'
@@ -63,9 +87,9 @@ function amountToPay() {
 button.addEventListener("click", amountToPay);
 
 function clearAll() {
-  mortgageAmount.textContent = "";
-  mortgageTerm.textContent = "";
-  interestRate.textContent = "";
+  mortgageAmount.value = "";
+  mortgageTerm.value = "";
+  interestRate.value = "";
   monthlyRepaymnets.textContent = "";
   totalPayment.textContent = "";
 }
