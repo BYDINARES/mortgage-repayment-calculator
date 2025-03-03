@@ -25,29 +25,7 @@ function amountToPay() {
   const mortgageTermValue = +mortgageTerm.value;
   const interestRateValue = +interestRate.value;
 
-  function isTheProcessCorrect() {
-    /* if (!+mortgageAmountValue) {
-      mortgageAmount.insertAdjacentHTML(
-        "afterend",
-        <p>Please enter a valid number</p>
-      );
-    } else if  */
-    const arrayOfInputElements = [
-      mortgageAmountValue,
-      mortgageTermValue,
-      interestRateValue,
-    ];
-    for (let i = 0; i < arrayOfInputElements.length; i++) {
-      if (!arrayOfInputElements[i].value) {
-        arrayOfInputElements[i].insertAdjacentHTML(
-          "afterend",
-          "<p>Please enter a valid number</p>"
-        );
-        if (arrayOfInputElements[i].value === mortgageAmount) {
-        }
-      }
-    }
-  }
+  mortgageAmount.addEventListener("input", isTheProcessCorrect);
 
   //The two option inputs
   let mortgageType = document.querySelector(
@@ -84,7 +62,29 @@ function amountToPay() {
     totalPayment.textContent = "";
   }
 }
+
+function isTheProcessCorrect() {
+  const arrayOfInputElements = [mortgageAmount, mortgageTerm, interestRate];
+
+  for (let i = 0; i < arrayOfInputElements.length; i++) {
+    const input = arrayOfInputElements[i];
+
+    if (isNaN(input.value) || input.value === "") {
+      input.parentNode.parentNode.insertAdjacentHTML(
+        "beforeend",
+        "<p style='color: red; font-size: 1rem;'>You typed wrong</p>"
+      );
+    }
+  }
+
+  /*         input.insertAdjacentHTML(
+          "afterend",
+          `<p class="error-message" style="color:red;">Please enter a valid number</p>`
+ */
+}
+
 button.addEventListener("click", amountToPay);
+button.addEventListener("click", isTheProcessCorrect);
 
 function clearAll() {
   mortgageAmount.value = "";
