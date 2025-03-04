@@ -63,28 +63,37 @@ function amountToPay() {
   }
 }
 
-function isTheProcessCorrect() {
-  const arrayOfInputElements = [mortgageAmount, mortgageTerm, interestRate];
-
-  for (let i = 0; i < arrayOfInputElements.length; i++) {
-    const input = arrayOfInputElements[i];
-
-    if (isNaN(input.value) || input.value === "") {
-      input.parentNode.parentNode.insertAdjacentHTML(
-        "beforeend",
-        "<p style='color: red; font-size: 1rem;'>You typed wrong</p>"
-      );
-    }
+function isTheProcessCorrect(input) {
+  // Remove previous error messages
+  const existingError =
+    input.parentNode.parentNode.querySelector(".error-message");
+  if (existingError) {
+    existingError.remove();
+    input.style.borderColor = "";
   }
 
-  /*         input.insertAdjacentHTML(
-          "afterend",
-          `<p class="error-message" style="color:red;">Please enter a valid number</p>`
- */
+  // Check if input is a number
+  if (isNaN(input.value)) {
+    input.parentNode.parentNode.insertAdjacentHTML(
+      "beforeend",
+      `<p class="error-message" style="color: red; font-size: 1rem;">You typed wrong</p>`
+    );
+    input.style.borderColor = "red";
+  } else if (input.value === "") {
+    input.parentNode.parentNode.insertAdjacentHTML(
+      "beforeend",
+      `<p class="error-message" style="color: red; font-size: 1rem;">You typed nothing</p>`
+    );
+    input.style.borderColor = "red";
+  }
 }
+mortgageAmount.addEventListener("input", () =>
+  isTheProcessCorrect(mortgageAmount)
+);
+mortgageTerm.addEventListener("input", () => isTheProcessCorrect(mortgageTerm));
+interestRate.addEventListener("input", () => isTheProcessCorrect(interestRate));
 
 button.addEventListener("click", amountToPay);
-button.addEventListener("click", isTheProcessCorrect);
 
 function clearAll() {
   mortgageAmount.value = "";
@@ -92,5 +101,7 @@ function clearAll() {
   interestRate.value = "";
   monthlyRepaymnets.textContent = "";
   totalPayment.textContent = "";
+  const allErrorAlerts = document.querySelectorAll(".error-message");
+  allErrorAlerts.textContent = "";
 }
 clearAllButton.addEventListener("click", clearAll);
