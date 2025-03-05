@@ -64,14 +64,35 @@ body {
   width: 100%;
 }
 
+/*Animations*/
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*Following*/
 .input-boxes {
   display: flex;
   flex-direction: row;
   height: 40%;
+  border-radius: 4px;
 }
-.input-boxes input:hover,
-.input-boxes input:focus {
-  border-color: rgb(246, 156, 82);
+.input-boxes:hover,
+.input-boxes:focus {
+  border: 2px solid rgb(246, 156, 82);
 }
 
 /*General top-inputs on the top*/
@@ -108,30 +129,19 @@ body {
 /*The input*/
 .mortgage-amount input {
   width: 80%;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-right: 1.8px solid gray;
 }
 /*The box in the first input*/
 .pound {
   width: 20%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
   border-left: 1.5px solid gray;
 }
 
 /*2-3*/
 /*The second input and the third*/
-.mortgage-term input,
-.interest-rate input {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
 .years,
 .percentage {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
   border-right: 1.8px solid gray;
 }
 
@@ -193,12 +203,6 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
 }
-.two-options-inputs label:focus,
-.two-options-inputs label:hover {
-  background-color: bisque;
-  border-color: rgb(246, 156, 82); /*¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨*/
-}
-
 .two-options-inputs input {
   height: clamp(20px, 10vh, 25px);
   width: clamp(20px, 10vh, 25px);

@@ -67,9 +67,10 @@ function isTheProcessCorrect(input) {
   // Remove previous error messages
   const existingError =
     input.parentNode.parentNode.querySelector(".error-message");
+
   if (existingError) {
     existingError.remove();
-    input.style.borderColor = "";
+    input.parentNode.style.border = "";
   }
 
   // Check if input is a number
@@ -78,13 +79,13 @@ function isTheProcessCorrect(input) {
       "beforeend",
       `<p class="error-message" style="color: red; font-size: 1rem;">You typed wrong</p>`
     );
-    input.style.borderColor = "red";
+    existingError.classList.input.parentNode.style.border = "2px solid red";
   } else if (input.value === "") {
     input.parentNode.parentNode.insertAdjacentHTML(
       "beforeend",
       `<p class="error-message" style="color: red; font-size: 1rem;">You typed nothing</p>`
     );
-    input.style.borderColor = "red";
+    input.parentNode.style.border = "2px solid red";
   }
 }
 mortgageAmount.addEventListener("input", () =>
@@ -103,5 +104,15 @@ function clearAll() {
   totalPayment.textContent = "";
   const allErrorAlerts = document.querySelectorAll(".error-message");
   allErrorAlerts.textContent = "";
+
+  // Remove all error messages
+  document
+    .querySelectorAll(".error-message")
+    .forEach((error) => error.remove());
+
+  // Reset input borders
+  document.querySelectorAll(".input-boxes").forEach((input) => {
+    input.style.border = "";
+  });
 }
 clearAllButton.addEventListener("click", clearAll);
