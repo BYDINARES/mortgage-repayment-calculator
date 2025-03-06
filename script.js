@@ -19,6 +19,10 @@ const monthlyRepaymnets = document.querySelector(
 //--------2
 const totalPayment = document.querySelector(".term-repayment-amount > p");
 
+//========================= The two results pages =======================
+const emptyResults = document.querySelector(".empty-results");
+const completedResults = document.querySelector(".completed-results");
+
 //========================== Function ================================//
 function amountToPay() {
   const mortgageAmountValue = +mortgageAmount.value;
@@ -62,6 +66,8 @@ function amountToPay() {
     totalPayment.textContent = "";
   }
 }
+//========= The variable which determines if the function is right or not ============
+let isValid = false;
 
 function isTheProcessCorrect(input) {
   // Remove previous error messages
@@ -70,31 +76,34 @@ function isTheProcessCorrect(input) {
 
   if (existingError) {
     existingError.remove();
-    input.parentNode.style.border = "";
+    input.parentNode.classList.remove("error");
   }
 
   // Check if input is a number
-  if (isNaN(input.value)) {
-    input.parentNode.parentNode.insertAdjacentHTML(
-      "beforeend",
-      `<p class="error-message" style="color: red; font-size: 1rem;">You typed wrong</p>`
-    );
-    existingError.classList.input.parentNode.style.border = "2px solid red";
-  } else if (input.value === "") {
+  if (input.value.trim() === "") {
     input.parentNode.parentNode.insertAdjacentHTML(
       "beforeend",
       `<p class="error-message" style="color: red; font-size: 1rem;">You typed nothing</p>`
     );
-    input.parentNode.style.border = "2px solid red";
+    input.parentNode.classList.add("error");
+  } else if (isNaN(input.value)) {
+    input.parentNode.parentNode.insertAdjacentHTML(
+      "beforeend",
+      `<p class="error-message" style="color: red; font-size: 1rem;">You typed wrong</p>`
+    );
+    input.parentNode.classList.add("error");
+  } else {
+    input.parentNode.classList.remove("error");
+    button.addEventListener("click", amountToPay);
+    isValid = true;
   }
 }
+
 mortgageAmount.addEventListener("input", () =>
   isTheProcessCorrect(mortgageAmount)
 );
 mortgageTerm.addEventListener("input", () => isTheProcessCorrect(mortgageTerm));
 interestRate.addEventListener("input", () => isTheProcessCorrect(interestRate));
-
-button.addEventListener("click", amountToPay);
 
 function clearAll() {
   mortgageAmount.value = "";
@@ -104,6 +113,10 @@ function clearAll() {
   totalPayment.textContent = "";
   const allErrorAlerts = document.querySelectorAll(".error-message");
   allErrorAlerts.textContent = "";
+  isValid = false;
+  //The two results pages
+  emptyResults.style.zIndex = "1";
+  completedResults.style.zIndex = "0";
 
   // Remove all error messages
   document
@@ -111,8 +124,13 @@ function clearAll() {
     .forEach((error) => error.remove());
 
   // Reset input borders
-  document.querySelectorAll(".input-boxes").forEach((input) => {
-    input.style.border = "";
-  });
+  const allInputContainers = document.querySelectorAll(".iput-boxes");
+  allInputContainers.classList.remove();
 }
+
+//========= The button ====================
 clearAllButton.addEventListener("click", clearAll);
+if (isValid) {
+  emptyResults.style.zIndex = "0";
+  completedResults.style.zIndex = "1"; // fix this here ===============================================================
+}

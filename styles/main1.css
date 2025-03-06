@@ -82,6 +82,11 @@ body {
     transform: translateX(0);
   }
 }
+.error {
+  border: 2px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+  animation: shake 2s ease-in-out;
+}
 
 /*Following*/
 .input-boxes {
@@ -89,10 +94,6 @@ body {
   flex-direction: row;
   height: 40%;
   border-radius: 4px;
-}
-.input-boxes:hover,
-.input-boxes:focus {
-  border: 2px solid rgb(246, 156, 82);
 }
 
 /*General top-inputs on the top*/
@@ -507,7 +508,6 @@ object {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
-    z-index: 0;
   }
 
   .empty-results,

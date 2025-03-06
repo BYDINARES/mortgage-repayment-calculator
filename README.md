@@ -18,9 +18,7 @@ You can use any tools you like to help you complete the challenge. So if you've 
 
 Your users should be able to:
 
-- Input mortgage information and see monthly repayment and total repayment amounts after submitting the form
 - See form validation messages if any field is incomplete
-- Complete the form only using their keyboard
 - See hover and focus states for all interactive elements on the page
 
 Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
