@@ -51,11 +51,27 @@ body {
   margin-top: 0%;
   margin-bottom: 0%;
 }
+
+@keyframes click {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .title > button {
   all: unset;
   font-size: 1.3rem;
   text-decoration: underline;
   cursor: pointer;
+}
+.title > button:focus {
+  animation: click 2s ease-in;
 }
 
 .top-inputs /*The container that holds the inputs, the subtitle and everthing else*/ {
