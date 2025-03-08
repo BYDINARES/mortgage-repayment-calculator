@@ -23,7 +23,7 @@ const totalPayment = document.querySelector(".term-repayment-amount > p");
 const emptyResults = document.querySelector(".empty-results");
 const completedResults = document.querySelector(".completed-results");
 
-//========================== Function ================================//
+//========================== Function ====================================================//
 
 // The variable which determines if the function is right or not
 let isValid = false;
@@ -40,17 +40,17 @@ function isTheProcessCorrect(input) {
   }
 
   // Check if input is a number
-  if (input.value.trim() === "") {
-    input.parentNode.parentNode.insertAdjacentHTML(
-      "beforeend",
-      `<p class="error-message" style="color: red; font-size: 1rem;">You typed nothing</p>`
-    );
-    input.parentNode.classList.add("error");
-    isValid = false;
-  } else if (isNaN(input.value)) {
+  if (isNaN(input.value)) {
     input.parentNode.parentNode.insertAdjacentHTML(
       "beforeend",
       `<p class="error-message" style="color: red; font-size: 1rem;">You typed wrong</p>`
+    );
+    input.parentNode.classList.add("error");
+    isValid = false;
+  } else if (input.value.trim() === "") {
+    input.parentNode.parentNode.insertAdjacentHTML(
+      "beforeend",
+      `<p class="error-message" style="color: red; font-size: 1rem;">You typed nothing</p>`
     );
     input.parentNode.classList.add("error");
     isValid = false;
@@ -59,13 +59,13 @@ function isTheProcessCorrect(input) {
     isValid = true;
   }
 }
-
 mortgageAmount.addEventListener("input", () =>
   isTheProcessCorrect(mortgageAmount)
 );
 mortgageTerm.addEventListener("input", () => isTheProcessCorrect(mortgageTerm));
 interestRate.addEventListener("input", () => isTheProcessCorrect(interestRate));
 
+//==================== Calculate the amount to pay =====================================
 function amountToPay() {
   const mortgageAmountValue = +mortgageAmount.value;
   const mortgageTermValue = +mortgageTerm.value;
@@ -116,7 +116,7 @@ function amountToPay() {
 }
 button.addEventListener("click", amountToPay);
 
-//========= The button ====================
+//========================= CLEAR-ALL BUTTON ======================================
 function clearAll() {
   mortgageAmount.value = "";
   mortgageTerm.value = "";
@@ -135,14 +135,15 @@ function clearAll() {
     .querySelectorAll(".error-message")
     .forEach((error) => error.remove());
 
+  // Reset input borders
+  document
+    .querySelectorAll(".input-boxes")
+    .forEach((element) => element.classList.remove("error"));
+
   //For the two option section
   document
     .querySelectorAll('input[name="mortgageType"]')
     .forEach((radio) => (radio.checked = false));
-
-  // Reset input borders
-  const allInputContainers = document.querySelectorAll(".iput-boxes");
-  allInputContainers.classList.remove();
 }
 
 clearAllButton.addEventListener("click", clearAll);
