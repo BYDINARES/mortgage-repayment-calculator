@@ -64,17 +64,25 @@ body {
   }
 }
 
+/*The button which clears all the inputs*/
 .title > button {
   all: unset;
   font-size: 1.3rem;
   text-decoration: underline;
   cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.5s linear;
 }
-.title > button:focus {
-  animation: click 2s ease-in;
+.title > button:focus,
+.title > button:hover {
+  background-color: rgb(197, 197, 197);
+}
+.title > button:active {
+  transform: scale(0.5);
 }
 
-.top-inputs /*The container that holds the inputs, the subtitle and everthing else*/ {
+/*The container that holds the inputs, the subtitle and everthing else*/
+.top-inputs {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
@@ -110,6 +118,12 @@ body {
   flex-direction: row;
   height: 40%;
   border-radius: 4px;
+  transition: transform 0.5s ease-in;
+}
+
+.input-boxes:focus-within,
+.input-boxes:hover {
+  transform: scale(1.05);
 }
 
 /*General top-inputs on the top*/
@@ -219,7 +233,13 @@ body {
   /*Font-size*/
   font-size: 1.4rem;
   font-weight: 500;
+  /* animation */
+  transition: all 0.5s linear;
 }
+.two-options-inputs label:active {
+  transform: scale(0.6);
+}
+
 .two-options-inputs input {
   height: clamp(20px, 10vh, 25px);
   width: clamp(20px, 10vh, 25px);
@@ -246,12 +266,17 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   background-color: rgb(200, 188, 15);
-  transition: transform ease 1s;
+  transition: all 0.2s linear;
 }
 #calculate-button:focus,
 #calculate-button:hover {
-  transform: scale(1.02);
   background-color: rgba(200, 188, 15, 0.765);
+}
+#calculate-button:hover {
+  transform: scale(1.03);
+}
+#calculate-button:active {
+  transform: scale(0.9);
 }
 
 /*=============================== Bottom ==================================*/
