@@ -147,6 +147,15 @@ function clearAll() {
 }
 
 clearAllButton.addEventListener("click", clearAll);
+clearAllButton.classList.add("click");
+/* clearAllButton.addEventListener("click", () => {
+  clearAllButton.classList.remove("click");
+  void clearAllButton.offsetWidth;
+  clearAllButton.classList.add("click");
+});
+clearAllButton.addEventListener("animationend", () => {
+  clearAllButton.classList.remove("click");
+}); */
 if (isValid) {
   emptyResults.style.zIndex = "0";
   completedResults.style.zIndex = "1"; // fix this here ===============================================================
