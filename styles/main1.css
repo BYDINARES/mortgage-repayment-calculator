@@ -76,6 +76,7 @@ body {
 
 .click {
   animation: shrink 1s linear;
+  background-color: rgb(99, 96, 96);
 }
 
 /*The container that holds the inputs, the subtitle and everthing else*/
@@ -237,9 +238,9 @@ body {
   transform: scale(0.6);
 }
 
-label > input[type="radio"]:checked,
-label > input[type="radio"] {
-  accent-color: red; /* Changes the highlight color */
+input[type="radio"]:checked,
+input[type="radio"] {
+  accent-color: #b6a329; /* Changes the highlight color */
 }
 
 .two-options-inputs input {
