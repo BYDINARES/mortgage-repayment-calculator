@@ -50,33 +50,45 @@ body {
 .title > h1 {
   margin-top: 0%;
   margin-bottom: 0%;
+  height: 80%;
 }
 
 /*The button which clears all the inputs*/
 .title > button {
   all: unset;
+  padding: 1%;
   font-size: 1.3rem;
   text-decoration: underline;
   cursor: pointer;
-  transition: all 0.5s linear;
+  border-radius: 10px;
+  transition: all 0.1s ease-in;
 }
 /*========== Keyframe to shrink elements =========*/
 @keyframes shrink {
   0% {
     transform: scale(1);
   }
+  30% {
+    transform: scale(0.9);
+  }
   50% {
     transform: scale(0.8);
-    background-color: rgb(197, 197, 197);
+  }
+  70% {
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
   }
 }
 
-.click {
-  animation: shrink 1s linear;
-  background-color: rgb(99, 96, 96);
+.title > button:hover,
+.title > button:focus {
+  background-color: blanchedalmond;
+}
+
+.title > button:active {
+  animation: shrink 0.1s linear;
 }
 
 /*The container that holds the inputs, the subtitle and everthing else*/
@@ -232,10 +244,15 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
   /* animation */
-  transition: all 0.5s linear;
+  transition: all 0.2s linear;
 }
 .two-options-inputs label:active {
-  transform: scale(0.6);
+  transform: scale(0.8);
+  background-color: rgb(247, 160, 116);
+}
+.two-options-inputs label:hover,
+.two-options-inputs label:focus {
+  background-color: #e6ddd2;
 }
 
 input[type="radio"]:checked,
@@ -272,9 +289,13 @@ input[type="radio"] {
   transition: all 0.2s linear;
 }
 
+#calculate-button:focus,
+#calculate-button:hover {
+  background-color: rgba(212, 204, 99, 0.965);
+}
+
 #calculate-button:active {
   transform: scale(0.9);
-  background-color: rgba(249, 241, 130, 0.846);
 }
 
 /*=============================== Bottom ==================================*/

@@ -34,7 +34,7 @@ function isTheProcessCorrect(input) {
   const existingError =
     input.parentNode.parentNode.querySelector(".error-message");
 
-  const inputValue = +input.value.replace(/\s+/g, "");
+  const inputValue = Number(input.value.trim());
 
   if (existingError) {
     existingError.remove();
@@ -42,14 +42,14 @@ function isTheProcessCorrect(input) {
   }
 
   // Check if input is a number
-  if (isNaN(inputValue) || inputValue === 0) {
+  if (isNaN(inputValue)) {
     input.parentNode.parentNode.insertAdjacentHTML(
       "beforeend",
       `<p class="error-message" style="color: red; font-size: 1rem;">You typed wrong</p>`
     );
     input.parentNode.classList.add("error");
     isValid = false;
-  } else if (inputValue == "") {
+  } else if (inputValue === 0) {
     input.parentNode.parentNode.insertAdjacentHTML(
       "beforeend",
       `<p class="error-message" style="color: red; font-size: 1rem;">You typed nothing</p>`
@@ -148,26 +148,8 @@ function clearAll() {
     .forEach((radio) => (radio.checked = false));
 }
 
-clearAllButton.addEventListener("click", function () {
-  clearAll();
+clearAllButton.addEventListener("click", clearAll);
 
-  // Remove the class to restart the animation
-  clearAllButton.classList.remove("click");
-
-  // Use a short delay to ensure the class removal takes effect before re-adding
-  setTimeout(() => {
-    clearAllButton.classList.add("click");
-  }, 10);
-});
-
-/* clearAllButton.addEventListener("click", () => {
-  clearAllButton.classList.remove("click");
-  void clearAllButton.offsetWidth;
-  clearAllButton.classList.add("click");
-});
-clearAllButton.addEventListener("animationend", () => {
-  clearAllButton.classList.remove("click");
-}); */
 if (isValid) {
   emptyResults.style.zIndex = "0";
   completedResults.style.zIndex = "1"; // fix this here ===============================================================
